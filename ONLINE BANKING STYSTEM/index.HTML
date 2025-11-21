@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Banking System</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- LOGIN PAGE -->
+    <div class="page" id="loginPage">
+        <div class="card">
+            <h2>United Bank</h2>
+            <input type="text" id="loginAcc" placeholder="Account Number" />
+            <input type="password" id="loginPass" placeholder="Password" />
+            <button onclick="login()">Login</button>
+            <button onclick="showPage('createPage')" class="linkBtn">Create New Account</button>
+        </div>
+    </div>
+
+    <!-- CREATE ACCOUNT -->
+    <div class="page" id="createPage">
+        <div class="card">
+            <h2>Create Account</h2>
+            <input type="text" id="newName" placeholder="Full Name" />
+            <input type="password" id="newPass" placeholder="Password" />
+            <button onclick="createAccount()">Create Account</button>
+            <button onclick="showPage('loginPage')" class="linkBtn">Back</button>
+        </div>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div class="page" id="homePage">
+        <div class="card">
+            <h2>Dashboard</h2>
+            <p id="welcome"></p>
+            <p>Balance: ₹<span id="balance">0</span></p>
+
+            <button onclick="showPage('depositPage')">Deposit</button>
+            <button onclick="showPage('withdrawPage')">Withdraw</button>
+            <button onclick="openHistory()">Transaction History</button>
+            <button onclick="logout()" class="logout">Logout</button>
+        </div>
+    </div>
+
+    <!-- DEPOSIT PAGE -->
+    <div class="page" id="depositPage">
+        <div class="card">
+            <h2>Deposit</h2>
+            <input type="number" id="depAmount" placeholder="Amount" />
+            <button onclick="deposit()">Confirm</button>
+            <button onclick="showPage('homePage')" class="linkBtn">Back</button>
+        </div>
+    </div>
+
+    <!-- WITHDRAW PAGE -->
+    <div class="page" id="withdrawPage">
+        <div class="card">
+            <h2>Withdraw</h2>
+            <input type="number" id="withAmount" placeholder="Amount" />
+            <button onclick="withdraw()">Confirm</button>
+            <button onclick="showPage('homePage')" class="linkBtn">Back</button>
+        </div>
+    </div>
+
+    <!-- TRANSACTION HISTORY -->
+    <div class="page" id="historyPage">
+        <div class="card">
+            <h2>History</h2>
+            <ul id="historyList"></ul>
+            <button onclick="showPage('homePage')" class="linkBtn">Back</button>
+        </div>
+    </div>
+
+</body>
+</html>
